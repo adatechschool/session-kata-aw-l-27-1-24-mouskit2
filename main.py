@@ -28,8 +28,18 @@ class Awele:
         self.display_value(self.plateau_up.values())
         self.display_value(self.plateau_down.values())
         self.display_key(self.plateau_down.keys())
+    
+    def is_empty(self):
+        for value in self.plateau_up.values():
+            if value != 0:
+                return False
+        for value in self.plateau_down.values():
+            if value != 0:
+                return False
+        return True
         
         
 if __name__ == '__main__':
     game = Awele()
     game.display()
+    print(f"le jeu et il vide = {game.is_empty()}")
